@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleCriptografia.css">
+    <title>Conversor de Criptografias</title>
+    <link rel="icon" href="../images/home.png" type="image/png">
+</head>
+<body>
+
+    <header>
+        <div class="inicio">
+          <a href="../index.html">
+            <img src="../images/home.png" alt="Imagem Início" />
+          </a>
+        </div>
+  
+        <div class="titulo">
+          <h1>Criptografias</h1>
+        </div>
+  
+        <div>
+          <p></p>
+        </div>
+  
+      </header>
+
+      <main>
+
+        <section class="selecao">
+          
+        <div class="selecaoCriptografia">
+
+          <h1>Escolha sua criptografia</h1>
+
+        <select name="selectCriptografia" id="selectCriptografia" onchange="mudouCriptografia()">
+          <option value="" selected disabled>Escolha a Criptografia</option>
+          <option value="binario">Binário</option>
+          <option value="hexadecimal">Hexadecimal</option>
+          <option value="octodecimal">Octodecimal</option>
+          <option value="cifraCesar">Cifra de Cesar</option>
+        </select>
+        </div>
+      </section>
+
+      <section class="areaInputOutput">
+        <section class="blocosInputOutput">
+        <div class="blocoInputOutput">
+          <h3 id="inputH3">Texto Inicial</h3>
+          <textarea name="input" id="inputTexto" placeholder="Digite aqui"></textarea>
+
+        </div class="centroInputOutput">
+        <div>
+        <div class="indice" id="indice"> 
+          <p>Escolha a chave da cifra</p>
+          <select name="chaveCifra" id="chaveCifra" onchange="mudouChaveCifraCesar()">
+
+            <option value="" selected disabled>?</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+
+          </select>
+
+        </div>
+
+        <div class="inversor">
+
+          <button onclick="trocaInput()">⇄</button>
+
+        </div>
+      </div>
+
+        <div class="blocoInputOutput">
+          <h3 id="outputH3">Texto Final</h3>
+          <textarea name="output" id="outputTexto" placeholder="Resposta Final" readonly></textarea>
+
+        </div>
+      </section>
+
+        <section class="botoesCriptografar">
+
+          <div>
+        <button onclick="criptografar()">Criptografar</button>
+
+        <button onclick="limparBlocos()">Limpar</button>
+
+        </div>
+        </section>
+      </section>
+
+
+
+      </main>
+
+    <script src="scriptCriptografia.js"></script>
+</body>
+</html>
