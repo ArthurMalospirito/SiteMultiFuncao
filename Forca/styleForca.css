@@ -21,3 +21,31 @@ header {
     justify-content: space-between;
     border-bottom: 3px solid rgba(97, 100, 105, 1);
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.areaBotoes {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.botoesOrd {
+    display: flex;
+    justify-content: center;
+}
+
+.botoesOrd button {
+    margin: 0.2rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    background-color: rgba(207, 210, 215, 1);
+    cursor: pointer;
+}

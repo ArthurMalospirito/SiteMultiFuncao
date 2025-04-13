@@ -38,10 +38,10 @@ function mudouCriptografia() {
             outputH3.innerHTML="ASCII";
             opcaoCriptografar = false;
             break;
-        case "octodecimal":
+        case "octal":
             tipoCriptografia=select.value;
             indice.style.display = "none";
-            inputH3.innerHTML="Octodecimal";
+            inputH3.innerHTML="Octal";
             outputH3.innerHTML="ASCII";
             opcaoCriptografar = false;
             break;
@@ -108,7 +108,7 @@ function criptografar () {
 
     let output = "";
     //Ele vê se deve polir o texto ou não
-    if (tipoCriptografia=="binario" || tipoCriptografia=="hexadecimal" || tipoCriptografia=="octodecimal")
+    if (tipoCriptografia=="binario" || tipoCriptografia=="hexadecimal" || tipoCriptografia=="octal")
     {
 
         if (opcaoCriptografar==false) {
@@ -126,11 +126,15 @@ function criptografar () {
         }
         else {
             inputPolido = userInput
+
         }
 
     }
+    else if (tipoCriptografia=="cifraCesar"){
+        console.log("aveee")
+        inputPolido = userInput.toLowerCase()
+    }
     else {
-        
         inputPolido = userInput
     }
 
@@ -163,16 +167,16 @@ function criptografar () {
 
         break;
 
-        case "octodecimal":
+        case "octal":
 
             if (opcaoCriptografar==true){
-                output = asciiToOctodecimal(inputPolido);
+                output = asciiTooctal(inputPolido);
             }
             else if (inputPolido.length%3==0){
                     
-                output = octodecimalToAscii(inputPolido);
+                output = octalToAscii(inputPolido);
             }
-            else{output="Talvez isso não seja Octodecimal, digite novamente"}
+            else{output="Talvez isso não seja octal, digite novamente"}
 
         break;
 
@@ -233,8 +237,8 @@ function asciiToHexadecimal(valorAscii) {
 
 }
 
-//recebe o valor em ascii e converte para octodecimal
-function asciiToOctodecimal(valorAscii) {
+//recebe o valor em ascii e converte para octal
+function asciiTooctal(valorAscii) {
 
     let fraseFinal =""
     for (let letra of valorAscii){
@@ -314,15 +318,15 @@ function hexadecimalToAscii(valorHexadecimal) {
 
 }
 
-//recebe o valor em octodecimal e converte para ascii
-function octodecimalToAscii(valorOctodecimal) {
+//recebe o valor em octal e converte para ascii
+function octalToAscii(valoroctal) {
 
     
     let valorBytes = [];
 
     let byteAtual = "";
 
-    for (let bitGeral of valorOctodecimal){
+    for (let bitGeral of valoroctal){
         byteAtual+=bitGeral
         if (byteAtual.length>=3) {
             
@@ -361,7 +365,6 @@ function cifraDeCesar(textoNormal,chave) {
         else {
             let posicaoAtual = letrasAlfabeto.indexOf(letra)
             let novaPosicao = (posicaoAtual+chave) %26
-            console.log(novaPosicao)
             letraEncriptada = letrasAlfabeto[novaPosicao]
             fraseEncriptada+=letraEncriptada
 
