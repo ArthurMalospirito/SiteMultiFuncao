@@ -24,16 +24,16 @@ const palavrasComida = ["lasanha","feijoada","strogonoff","arroz","carne","batat
 const palavrasFrutas =["maça","banana","laranja","uva","ameixa","pitaya","kiwi","melância","mamão","limão","abacate","maracujá","jabuticaba"]
 
 const palavrasAnimais = [
-    "Cachorro", "Gato", "Leão", "Tigre", "Elefante", "Zebra", "Girafa", "Cavalo", "Vaca", "Porco",
-    "Ovelha", "Macaco", "Urso", "Panda", "Coelho", "Raposa", "Lobo", "Camelo", "Cervo", "Anta",
-    "Jacaré", "Crocodilo", "Hipopótamo", "Rinoceronte", "Canguru", "Lêmure", "Tatu", "Tamanduá", "Lontra", "Foca",
-    "Leopardo", "Guepardo", "Orangotango", "Gorila", "Bicho preguiça", "Suricata", "Papagaio", "Arara", "Coruja", "Águia",
-    "Falcão", "Pomba", "Pato", "Ganso", "Cisne", "Galinha", "Galo", "Pavão", "Peru", "Codorna",
-    "Tucano", "Urubu", "Avestruz", "Emu", "Quati", "Texugo", "Doninha", "Esquilo", "Rato", "Camundongo",
-    "Hamster", "Chinchila", "Capivara", "Jacaré anão", "Gambá", "Morcego", "Bicho da seda", "Joaninha", "Abelha", "Vespa",
-    "Formiga", "Cigarra", "Grilo", "Borboleta", "Mariposa", "Libélula", "Escorpião", "Aranha", "Caranguejo", "Lagosta",
-    "Camarão", "Polvo", "Lula", "Estrela do mar", "Cavalo marinho", "Peixe palhaço", "Tubarão", "Baleia", "Golfinho", "Peixe boi",
-    "Raia", "Enguia", "Salmão", "Atum", "Pinguim", "Furão", "Bicho geográfico", "Corvo", "Guaxinim", "Urso pardo"
+    "cachorro", "gato", "leão", "tigre", "elefante", "zebra", "girafa", "cavalo", "vaca", "porco",
+    "ovelha", "macaco", "urso", "panda", "coelho", "raposa", "lobo", "camelo", "cervo", "anta",
+    "jacaré", "crocodilo", "hipopótamo", "rinoceronte", "canguru", "lêmure", "tatu", "tamanduá", "lontra", "foca",
+    "leopardo", "guepardo", "orangotango", "gorila", "bicho preguiça", "suricata", "papagaio", "arara", "coruja", "águia",
+    "falcão", "pomba", "pato", "ganso", "cisne", "galinha", "galo", "pavão", "peru", "codorna",
+    "tucano", "urubu", "avestruz", "emu", "quati", "texugo", "doninha", "esquilo", "rato", "camundongo",
+    "hamster", "chinchila", "capivara", "jacaré anão", "gambá", "morcego", "bicho da seda", "joaninha", "abelha", "vespa",
+    "formiga", "cigarra", "grilo", "borboleta", "mariposa", "libélula", "escorpião", "aranha", "caranguejo", "lagosta",
+    "camarão", "polvo", "lula", "estrela do mar", "cavalo marinho", "peixe palhaço", "tubarão", "baleia", "golfinho", "peixe boi",
+    "raia", "enguia", "salmão", "atum", "pinguim", "furão", "bicho geográfico", "corvo", "guaxinim", "urso pardo","boto"
   ];
 
 let palavraEscolhida = ""
