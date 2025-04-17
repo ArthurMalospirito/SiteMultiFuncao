@@ -27,57 +27,86 @@
 
   <main>
 
-    <section class= "descricao">
-      <h1>Jogo da Forca</h1>
+    <div id="telaEscuro" class="fundoEscuro">
+      <div class="telaFinal">
+        <h2 id ="fraseDerrotaVitoria">Você perdeu</h2>
+        <h3 id ="palavraRelevada">A palavra era: </h3>
+        <button onclick="reiniciar()">Reiniciar</button>
+      </div>
+    </div>
+
+    <section class="selecaoDosTemas">
+      <div class = "textoTemas">
+        <h1>Tema</h1>
+      </div>
+      <div class="selectTemas">
+        <select name="selecaoTema" id="selecaoTema" onchange="mudouTema()">
+
+          <option value="comida">Comidas</option>
+          <option value="animal">Animais</option>
+          <option value="fruta">Frutas</option>
+
+        </select>
+      </div>
+
     </section>
 
     <section class="forca">
-      <img src="../images/forca.png" alt="Imagem forca">
+      <div class="imagemForca">
+        <img src="imagensForca/forca0.png" alt="Imagem forca" id="forcaImagem">
+      </div>
+
+      <div class = "palavraSecreta">
+
+        <h1 id="palavraOculta">_ _ _ _ _ _</h1>
+
+      </div>
     </section>
 
     <section class = "areaBotoes">
 
       <div class="botoesOrd">
-        <button>Q</button>
-        <button>W</button>
-        <button>E</button>
-        <button>R</button>
-        <button>T</button>
-        <button>Y</button>
-        <button>U</button>
-        <button>I</button>
-        <button>O</button>
-        <button>P</button>
+        <button onclick="verificaLetra('q')" id="qButton" class="botaoLetra">Q</button>
+        <button onclick="verificaLetra('w')" id="wButton" class="botaoLetra">W</button>
+        <button onclick="verificaLetra('e')" id="eButton" class="botaoLetra">E</button>
+        <button onclick="verificaLetra('r')" id="rButton" class="botaoLetra">R</button>
+        <button onclick="verificaLetra('t')" id="tButton" class="botaoLetra">T</button>
+        <button onclick="verificaLetra('y')" id="yButton" class="botaoLetra">Y</button>
+        <button onclick="verificaLetra('u')" id="uButton" class="botaoLetra">U</button>
+        <button onclick="verificaLetra('i')" id="iButton" class="botaoLetra">I</button>
+        <button onclick="verificaLetra('o')" id="oButton" class="botaoLetra">O</button>
+        <button onclick="verificaLetra('p')" id="pButton" class="botaoLetra">P</button>
       </div>
 
       <div class = "botoesOrd">
-        <button>A</button>
-        <button>S</button>
-        <button>D</button>
-        <button>F</button>
-        <button>G</button>
-        <button>H</button>
-        <button>J</button>
-        <button>K</button>
-        <button>L</button>
+        <button onclick="verificaLetra('a')" id="aButton" class="botaoLetra">A</button>
+        <button onclick="verificaLetra('s')" id="sButton" class="botaoLetra">S</button>
+        <button onclick="verificaLetra('d')" id="dButton" class="botaoLetra">D</button>
+        <button onclick="verificaLetra('f')" id="fButton" class="botaoLetra">F</button>
+        <button onclick="verificaLetra('g')" id="gButton" class="botaoLetra">G</button>
+        <button onclick="verificaLetra('h')" id="hButton" class="botaoLetra">H</button>
+        <button onclick="verificaLetra('j')" id="jButton" class="botaoLetra">J</button>
+        <button onclick="verificaLetra('k')" id="kButton" class="botaoLetra">K</button>
+        <button onclick="verificaLetra('l')" id="lButton" class="botaoLetra">L</button>
       
       </div>
 
     <div class = "botoesOrd">
 
-        <button>Z</button>
-        <button>X</button>
-        <button>C</button>
-        <button>V</button>
-        <button>B</button>
-        <button>N</button>
-        <button>M</button>
+        <button onclick="verificaLetra('z')" id="zButton" class="botaoLetra">Z</button>
+        <button onclick="verificaLetra('x')" id="xButton" class="botaoLetra">X</button>
+        <button onclick="verificaLetra('c')" id="cButton" class="botaoLetra">C</button>
+        <button onclick="verificaLetra('v')" id="vButton" class="botaoLetra">V</button>
+        <button onclick="verificaLetra('b')" id="bButton" class="botaoLetra">B</button>
+        <button onclick="verificaLetra('n')" id="nButton" class="botaoLetra">N</button>
+        <button onclick="verificaLetra('m')" id="mButton" class="botaoLetra">M</button>
 
     </div>
     </section>
 
+    
   </main>
 
-  
+  <script src="scriptForca.js"></script>
 </body>
 </html>
