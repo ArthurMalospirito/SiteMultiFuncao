@@ -23,7 +23,18 @@ const palavrasComida = ["lasanha","feijoada","strogonoff","arroz","carne","batat
 
 const palavrasFrutas =["maça","banana","laranja","uva","ameixa","pitaya","kiwi","melância","mamão","limão","abacate","maracujá","jabuticaba"]
 
-const palavrasAnimais = ["macaco","capivara","camelo","dromedário","tartaruga","guaxinim","tubarão","peixe","cachorro","gato","papagaio","arara","morcego"]
+const palavrasAnimais = [
+    "Cachorro", "Gato", "Leão", "Tigre", "Elefante", "Zebra", "Girafa", "Cavalo", "Vaca", "Porco",
+    "Ovelha", "Macaco", "Urso", "Panda", "Coelho", "Raposa", "Lobo", "Camelo", "Cervo", "Anta",
+    "Jacaré", "Crocodilo", "Hipopótamo", "Rinoceronte", "Canguru", "Lêmure", "Tatu", "Tamanduá", "Lontra", "Foca",
+    "Leopardo", "Guepardo", "Orangotango", "Gorila", "Bicho preguiça", "Suricata", "Papagaio", "Arara", "Coruja", "Águia",
+    "Falcão", "Pomba", "Pato", "Ganso", "Cisne", "Galinha", "Galo", "Pavão", "Peru", "Codorna",
+    "Tucano", "Urubu", "Avestruz", "Emu", "Quati", "Texugo", "Doninha", "Esquilo", "Rato", "Camundongo",
+    "Hamster", "Chinchila", "Capivara", "Jacaré anão", "Gambá", "Morcego", "Bicho da seda", "Joaninha", "Abelha", "Vespa",
+    "Formiga", "Cigarra", "Grilo", "Borboleta", "Mariposa", "Libélula", "Escorpião", "Aranha", "Caranguejo", "Lagosta",
+    "Camarão", "Polvo", "Lula", "Estrela do mar", "Cavalo marinho", "Peixe palhaço", "Tubarão", "Baleia", "Golfinho", "Peixe boi",
+    "Raia", "Enguia", "Salmão", "Atum", "Pinguim", "Furão", "Bicho geográfico", "Corvo", "Guaxinim", "Urso pardo"
+  ];
 
 let palavraEscolhida = ""
 
@@ -68,9 +79,6 @@ function escolheNovaPalavra(tema) {
             alert("Tema fora de escopo")
 
     }
-
-     //ESCLUIR DEPOISI!! ! !! ! !
-    console.log("A palavra escolhida foi: " + palavraEscolhida)
 
     for (caractere of palavraEscolhida) {
 
@@ -151,8 +159,6 @@ function verificaLetra(letraChute) {
             palavraCertateste+=caractere
         }
     }
-
-    console.log(testePalavraFinal)
 
     if (testePalavraFinal==palavraCertateste) {
     
