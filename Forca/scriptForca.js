@@ -19,9 +19,26 @@ function reiniciar() {
 }
 
 
-const palavrasComida = ["lasanha","feijoada","strogonoff","arroz","carne","batata","galinhada","cachorro quente","empada","coxinha","bolo","ovo","feijão","pizza","churrasco","miojo","linguiça"]
-
-const palavrasFrutas =["maça","banana","laranja","uva","ameixa","pitaya","kiwi","melância","mamão","limão","abacate","maracujá","jabuticaba"]
+const palavrasComida = [
+    "feijoada", "acarajé", "moqueca", "vatapá", "bobó de camarão", "farofa", "pamonha", "curau", "canjica", "tapioca",
+    "bolo de fubá", "bolo de mandioca", "paçoca", "doce de leite", "rapadura", "brigadeiro", "beijinho", "cuscuz", "arroz carreteiro",
+    "arroz com feijão", "arroz doce", "galo perdido", "vaca atolada", "frango com quiabo", "rabada", "dobradinha", "sarapatel",
+    "buchada", "torresmo", "linguiça acebolada", "escondidinho", "macarrão", "lasanha de frango", "pastel de vento",
+    "coxinha", "risoles", "empada", "quibe", "bolinho de chuva", "bolinho de arroz", "maniçoba", "caruru", "feijão tropeiro",
+    "carne assada", "carne seca", "carne de panela", "linguiça de pernil", "frango a passarinho", "ovo frito", "ovo cozido", "sopa de óleo",
+    "tutu de feijão", "angu", "sagu", "pudim de leite condensado", "mousse", "sorvete caseiro", "doce de mamão", "doce de abóbora",
+    "queijo com goiabada", "maria mole", "pé de cabrito", "pé de moleque", "bananada", "goiabada", "cajuzinho", "canjica branca",
+    "canjica amarela", "munguzá", "milho cremoso", "baião de dois", "churrasco", "churrasquinho", "espeto", "maionese",
+    "salpicão", "vinagrete", "pipoca", "pipoca doce", "milho cozido", "salgadinho de pacote", "pão de queijo", "pão água e sal",
+    "pão italiano", "pão francês", "pão artesanal", "requeijão", "manteiga", "queijo minas", "queijo coalho", "queijo prato",
+    "mortadela", "presunto", "salame", "torresminho", "empadão", "quindim", "baba de moça", "cocada", "curau de milho", "milho assado"
+  ];
+  
+const palavrasFrutas =[
+    "maçã", "banana", "laranja", "abacaxi", "morango", "uva", "melancia", "melão", "kiwi", "mamão",
+    "pêssego", "pera", "ameixa", "manga", "limão", "coco", "abacate", "maracujá", "cereja", "framboesa",
+    "amora", "tangerina", "graviola", "açaí", "goiaba", "jabuticaba", "pitaya", "carambola", "figo", "lichia"
+  ];
 
 const palavrasAnimais = [
     "cachorro", "gato", "leão", "tigre", "elefante", "zebra", "girafa", "cavalo", "vaca", "porco",

@@ -1,11 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+
+  <!--ComicSansImport-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styleRNG.css" />
+
     <title>RNG Games</title>
 </head>
 <body>
-    <h1>RNG Games</h1>
+
+    <section class="telaPreta" id="telaFinalId">
+
+      <div class="telaFinal">
+
+        <h1 id="textoFinal">Você perdeu (valor)!</h1>
+
+        <button id="botaoJogarNovamente" onclick="jogarNovamente()">Jogar Novamente</button>
+
+      </div>
+
+    </section>
+
+    <header>
+        <div class="inicio">
+          <a href="../index.html">
+            <img src="../images/home.png" alt="Imagem Início" />
+          </a>
+        </div>
+  
+        <div class="titulo">
+          <h1>RNG Games</h1>
+        </div>
+  
+        <div>
+          <p></p>
+        </div>
+  
+    </header>
+
+    <main>
+
+        <section class="botaoEscolheJogo">
+
+          <h1>Escolhe seu Jogo</h3>
+
+            <div class="botoesJogo" id="botoesEscolha">
+              <button onclick="selecionarJogo(this)" id="selectMines" value="mines">Mines</button>
+              <button onclick="selecionarJogo(this)" id="selectCrash" value="crash">Crash</button>
+              <button onclick="selecionarJogo(this)" id="selectDouble" value="double">Double</button>
+
+            </div>
+
+        </section>
+
+        <h1 id="tituloJogo">MINES</h1>
+
+        <section class="minesGame" id="minesGameId">
+
+          <div class="optionsMines">
+
+              <div class="areaVerba">
+
+                <h1>Verba:</h1>
+                <h1 id="verba">500</h1>
+
+              </div>
+      
+              <label for="valorApostado">Digite a quantidade de verba</label>
+              <input  id="valorApostado" type="text" oninput="this.value = this.value.replace(/,/g, '.').replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').replace(/^0+(\d)/, '$1').replace(/(\.\d{2})\d+$/, '$1')" placeholder="0.00"> <!--Copiado, claramente copiado-->
+
+
+              <label for="qtdMines">Quantidade de minas</label>
+              <select name="qtdMines" id="qtdMines">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+
+              </select>
+
+              <label for="multiplicador">Multiplicador</label>
+              <input type="text" value="1" id="multiplicador" readonly>
+
+              <label for="proxMultiplicador">Próximo Multiplicador</label>
+              <input type="text" value="1" id="proxMultiplicador" readonly>
+
+              <button id="botaoInteracao" onclick="comecarJogo()">Começar Jogo</button> <!--Botão de começar e retirar R$qtdDinheiro-->
+          </div>
+
+          <div class="minas">
+            
+            <button id="mina1" value="1" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina1imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina1imgDiamante" class="imagemDiamante"></button>
+            <button id="mina2" value="2" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina2imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina2imgDiamante" class="imagemDiamante"></button>
+            <button id="mina3" value="3" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina3imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina3imgDiamante" class="imagemDiamante"></button>
+            <button id="mina4" value="4" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina4imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina4imgDiamante" class="imagemDiamante"></button>
+            <button id="mina5" value="5" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina5imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina5imgDiamante" class="imagemDiamante"></button>
+            <button id="mina6" value="6" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina6imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina6imgDiamante" class="imagemDiamante"></button>
+            <button id="mina7" value="7" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina7imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina7imgDiamante" class="imagemDiamante"></button>
+            <button id="mina8" value="8" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina8imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina8imgDiamante" class="imagemDiamante"></button>
+            <button id="mina9" value="9" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina9imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina9imgDiamante" class="imagemDiamante"></button>
+            <button id="mina10" value="10" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina10imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina10imgDiamante" class="imagemDiamante"></button>
+            <button id="mina11" value="11" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina11imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina11imgDiamante" class="imagemDiamante"></button>
+            <button id="mina12" value="12" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina12imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina12imgDiamante" class="imagemDiamante"></button>
+            <button id="mina13" value="13" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina13imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina13imgDiamante" class="imagemDiamante"></button>
+            <button id="mina14" value="14" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina14imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina14imgDiamante" class="imagemDiamante"></button>
+            <button id="mina15" value="15" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina15imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina15imgDiamante" class="imagemDiamante"></button>
+            <button id="mina16" value="16" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina16imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina16imgDiamante" class="imagemDiamante"></button>
+            <button id="mina17" value="17" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina17imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina17imgDiamante" class="imagemDiamante"></button>
+            <button id="mina18" value="18" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina18imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina18imgDiamante" class="imagemDiamante"></button>
+            <button id="mina19" value="19" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina19imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina19imgDiamante" class="imagemDiamante"></button>
+            <button id="mina20" value="20" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina20imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina20imgDiamante" class="imagemDiamante"></button>
+            <button id="mina21" value="21" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina21imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina21imgDiamante" class="imagemDiamante"></button>
+            <button id="mina22" value="22" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina22imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina22imgDiamante" class="imagemDiamante"></button>
+            <button id="mina23" value="23" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina23imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina23imgDiamante" class="imagemDiamante"></button>
+            <button id="mina24" value="24" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina24imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina24imgDiamante" class="imagemDiamante"></button>
+            <button id="mina25" value="25" onclick="clicouMina(this)"><img src="ImagensRNG/ImagensMines/bomba.png" id="mina25imgBomba" class="imagemBomba"><img src="ImagensRNG/ImagensMines/diamante.png" id="mina25imgDiamante" class="imagemDiamante"></button>
+
+          </div>
+
+        </section>
+
+        <section class="crashGame" id="crashGameId">
+
+          <h1>EM ANDAMENTO...</h1>
+
+        </section>
+
+        <section class="doubleGame" id="doubleGameId">
+
+          <h1>EM ANDAMENTO...</h1>
+
+        </section>
+
+    </main>
+
+    
+
+    <script src="scriptRngGames.js"></script>
 </body>
 </html>

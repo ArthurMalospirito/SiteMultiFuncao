@@ -1,0 +1,294 @@
+
+body{
+    background-color: rgba(27, 30, 35, 1);
+    margin: 0px;
+    padding: 0px;
+    color: aliceblue;
+}
+
+
+.inicio img {
+    width: 50px;
+    height: 50px;
+    margin: 0.5rem;
+}
+
+header {
+    background-color: rgba(37, 40, 45, 1);
+    border-radius: 0px 0px 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid rgba(97, 100, 105, 1);
+}
+
+main {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.botaoEscolheJogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 1rem 3rem 1rem;
+
+}
+
+.botaoEscolheJogo h1 {
+    font-size: 1.8rem;
+}
+
+.botoesJogo {
+    display: inline-flex;
+    border: 2px solid rgba(147, 150, 155, 1); /*Cor da borda dos botões*/
+    border-radius: 0.5rem;
+    overflow: hidden;
+    
+}
+
+.botoesJogo button {
+    padding: 1rem 2rem;
+    border: none;
+    background-color: rgba(197, 200, 205, 1); /* Cor de fundo dos botões */
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: aliceblue;
+}
+
+.botoesJogo button:not(:last-child) {
+    border-right: 1px  solid rgba(147, 150, 155, 1); /* Cor da barrinha entre os botões*/
+}
+
+.minesGame {
+    background-color: rgba(37, 40, 45, 1);
+    border: 1px solid rgba(97, 100, 105, 1);
+    width: 75%;
+    height: auto;
+    border-radius: 2rem;
+    margin: 5rem 1rem;
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens à direita */
+    position: center;
+    padding: 2rem;
+    justify-content: space-around;
+}
+
+.minas {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 5rem);
+    grid-template-rows: repeat(5, 5rem);
+    gap: 3rem;
+    justify-self: flex-end; /* Garante que a grid se alinhe à direita */
+    width: 30rem;
+    height: 80%;
+    margin: 2rem 10rem 2rem 5rem;
+}
+
+.minas button {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(97,100,105,1);
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: rgba(32, 35, 40, 1);
+    transition: background-color 0.2s ease;
+    padding: 0.2rem;
+}
+
+.minas button img{
+    margin: 0px;
+    padding: 0px;
+    width: 6.5rem;
+    height: 6.5rem;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagemBomba {
+    display: none;
+}
+
+.imagemDiamante {
+    display: none;
+}
+
+.minas button:hover {
+    background-color: rgba(52, 55, 60, 1);
+}
+
+.optionsMines {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0 5rem 0;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#qtdMines {
+    border-radius: 1rem;
+    background-color: rgba(87, 90, 95, 1);
+    color: aliceblue;
+    width: 5rem;
+    height: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(97,100,105,1);
+}
+
+.optionsMines input {
+    border-radius: 1rem;
+    border: 1px solid rgba(97,100,105,1);
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    background-color: rgba(87, 90, 95, 1);
+    color: aliceblue;
+    margin-bottom: 1rem;
+    
+    
+}
+
+.optionsMines label {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: aliceblue;
+
+}
+
+#botaoInteracao {
+    margin-top: 2rem;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+    background-color: rgba(255, 32, 64, 1);
+    color: aliceblue;
+    border: 1px solid rgba(97,100,105,1);
+    cursor: pointer;
+}
+
+.telaPreta {
+    background-color: rgba(12,15,20,0.5);
+    width: 100%;
+    height: 100%;
+    position:  fixed;
+    display: none; /* MUDAR DEPOIS PARA NONE */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.telaFinal {
+    
+    background-color: rgba(52, 55, 60, 1);
+    border-radius: 1rem;
+    width: 36rem;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid;
+    
+}
+
+.telaFinal h1 {
+
+    font-size: 2.5rem;
+
+}
+.telaFinal button {
+
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3.3rem;
+    margin-top: 2rem;
+
+    background-color: rgba(255, 32, 64, 1);
+    color: aliceblue;
+    border: 1px solid rgba(97,100,105,1);
+
+}
+
+#tituloJogo {
+
+    font-size: 5rem;
+    margin: 0rem;
+    margin-bottom: -2rem;
+    padding: 0rem;
+    color: rgba(255, 32, 64, 1);
+    font-style: oblique;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    font-weight: bold;
+    font-family: "Comic Neue", cursive;
+    font-style: italic;
+
+}
+
+.areaVerba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin: 0rem;
+    padding: 0rem;
+    
+}
+
+.areaVerba h1{
+    font-size: 2rem;
+    color: rgba(255, 32, 64, 1);
+}
+
+#verba {
+    color: rgba(10, 255, 100, 1);
+}
+
+.crashGame {
+    background-color: rgba(37, 40, 45, 1);
+    border: 1px solid rgba(97, 100, 105, 1);
+    width: 75%;
+    height: auto;
+    border-radius: 2rem;
+    margin: 5rem 1rem;
+    display: flex;
+    justify-content: center; /* Alinha os itens à direita */
+    align-items: center;
+    position: center;
+    padding: 2rem;
+
+}
+
+.doubleGame {
+    background-color: rgba(37, 40, 45, 1);
+    border: 1px solid rgba(97, 100, 105, 1);
+    width: 75%;
+    height: auto;
+    border-radius: 2rem;
+    margin: 5rem 1rem;
+    display: flex;
+    justify-content: center; /* Alinha os itens à direita */
+    align-items: center;
+    position: center;
+    padding: 2rem;
+
+}
+
+
+/* TIRA ISSO DEPOISSSSSSSSSSSSSSSSSSSSSSS*/
+.doubleGame h1, .crashGame h1 {
+    font-family: "Comic Neue", cursive;
+    font-style: italic;
+    font-size: 5rem;
+}
