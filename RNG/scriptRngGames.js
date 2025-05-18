@@ -1,6 +1,6 @@
-let verba = 500
+let verba = 500;
 
-const verbaText = document.getElementById("verba")
+const verbaText = document.getElementById("verba");
 
 window.onload = function() {
     selecionarJogo(document.getElementById("selectMines"));
@@ -14,11 +14,11 @@ function roundToDecimal(value,decimals) {
 //Mudar botão
 let jogoSelecionado = "mines";
 
-const tituloJogo = document.getElementById("tituloJogo")
+const tituloJogo = document.getElementById("tituloJogo");
 
-const sectionMines = document.getElementById("minesGameId")
-const sectionCrash = document.getElementById("crashGameId")
-const sectionDouble = document.getElementById("doubleGameId")
+const sectionMines = document.getElementById("minesGameId");
+const sectionCrash = document.getElementById("crashGameId");
+const sectionDouble = document.getElementById("doubleGameId");
 
 function selecionarJogo(botaoClicado) {
     
@@ -36,33 +36,33 @@ function selecionarJogo(botaoClicado) {
             botaoCrash.style.backgroundColor=corBotaoPadrao;
             botaoDouble.style.backgroundColor=corBotaoPadrao;
 
-            tituloJogo.innerHTML="Mines"
+            tituloJogo.innerHTML="Mines";
 
-            sectionMines.style.display="flex"
-            sectionCrash.style.display="none"
-            sectionDouble.style.display="none"
+            sectionMines.style.display="flex";
+            sectionCrash.style.display="none";
+            sectionDouble.style.display="none";
         break;
         case "crash":
             botaoMines.style.backgroundColor=corBotaoPadrao;
             botaoCrash.style.backgroundColor=corBotaoSelecionado;
             botaoDouble.style.backgroundColor=corBotaoPadrao;
 
-            tituloJogo.innerHTML="Crash"
+            tituloJogo.innerHTML="Crash";
 
-            sectionMines.style.display="none"
-            sectionCrash.style.display="flex"
-            sectionDouble.style.display="none"
+            sectionMines.style.display="none";
+            sectionCrash.style.display="flex";
+            sectionDouble.style.display="none";
         break;
         case "double":
             botaoMines.style.backgroundColor=corBotaoPadrao;
             botaoCrash.style.backgroundColor=corBotaoPadrao;
             botaoDouble.style.backgroundColor=corBotaoSelecionado;
 
-            tituloJogo.innerHTML="Double"
+            tituloJogo.innerHTML="Double";
 
-            sectionMines.style.display="none"
-            sectionCrash.style.display="none"
-            sectionDouble.style.display="flex"
+            sectionMines.style.display="none";
+            sectionCrash.style.display="none";
+            sectionDouble.style.display="flex";
         break;
         default:
             alert("Deu Ruim");
@@ -107,7 +107,7 @@ let lucro = valorApostadoInput.value;
 
 function resetarMinas() {
 
-    botoesEscolhidosValue = []
+    botoesEscolhidosValue = [];
 
     minasClicadas=[]
     //resetanado cor dos botões
@@ -115,7 +115,7 @@ function resetarMinas() {
         botao.style.backgroundColor="rgba(32, 35, 40, 1)";
     }
 
-    gemasReveladas=0
+    gemasReveladas=0;
     //resetando ícones
     const imagensBomba = document.querySelectorAll(".imagemBomba");
     for (bomba of imagensBomba) {
@@ -164,21 +164,22 @@ function comecarJogo() {
             lucro = valorApostadoInput.value;
             botaoInteracao.innerHTML="Retirar R$ "+roundToDecimal(lucro,2);
 
-            verba-=roundToDecimal(lucro,2)
-            verbaText.innerHTML=roundToDecimal(verba,2)
-            tocarAudioDiamante()
+            verba-=roundToDecimal(lucro,2);
+            verbaText.innerHTML=roundToDecimal(verba,2);
+            tocarAudioDiamante();
+            console.log(botoesEscolhidosValue);
             comecouJogo=true;
         }
         else {
             if (verba==0){
-                alert("Faliu né? Falei para nn apostar")
+                alert("Faliu né? Falei para nn apostar");
             }
             else {
                 if (valorApostadoInput.value<=0){
                     alert("Aposte Algo");
                 }
                 else {
-                    alert("Digite um valor que possa pagar!")
+                    alert("Digite um valor que possa pagar!");
                 }
             }
         }
@@ -187,23 +188,27 @@ function comecarJogo() {
         //CONDIÇÃO VITÓRIA
         comecouJogo=false;
         
-        TocarAudioLevelUp()
-        resetarMinas()
+        TocarAudioLevelUp();
+        resetarMinas();
         botaoInteracao.innerHTML="Começar Jogo";
 
         //Colocar "LUCROU TANTO!!!"
-        telaFinal.style.display="flex"
+        telaFinal.style.display="flex";
+        imagemSecreta.style.display="none";
+        textoFinal.style.display="flex";
         textoFinal.innerHTML="Você lucrou R$ "+roundToDecimal(lucro,2)+"!";
-        verba+=roundToDecimal(lucro,2)
-        verbaText.innerHTML=roundToDecimal(verba,2)
+        verba+=roundToDecimal(lucro,2);
+        verbaText.innerHTML=roundToDecimal(verba,2);
 
     }
 }
 
 function jogarNovamente() {
 
-    resetarMinas()
+    resetarMinas();
     telaFinal.style.display="none";
+    imagemSecreta.style.display="none";
+    textoFinal.style.display="flex";
 
 }
 
@@ -225,8 +230,8 @@ function clicouMina(botaoClicado) {
                 let bombaId = "mina"+botaoClicado.value+"imgBomba";
                 document.getElementById(bombaId).style.display="flex";
                 botaoClicado.style.backgroundColor="red";
-                tocarAudioBomba()
-                perder()
+                tocarAudioBomba();
+                perder();
                 //COLOCAR "PERDEU TANTO!!!"
             }
             else {
@@ -244,7 +249,7 @@ function clicouMina(botaoClicado) {
                 lucro = valorApostadoInput.value*roundToDecimal(multiplicador,2);
 
                 botaoInteracao.innerHTML="Retirar R$ "+roundToDecimal(lucro,2);
-                tocarAudioDiamante()
+                tocarAudioDiamante();
             }
         }
 
@@ -254,7 +259,9 @@ function clicouMina(botaoClicado) {
 
 function perder() {
     comecouJogo=false;
-    telaFinal.style.display="flex"
+    telaFinal.style.display="flex";
+    imagemSecreta.style.display="none";
+    textoFinal.style.display="flex";
     textoFinal.innerHTML="Você Perdeu!";
     botaoInteracao.innerHTML="Começar Jogo";
     
@@ -263,7 +270,7 @@ function perder() {
 
 const audioDiamante = document.getElementById("audioDiamante");
 const audioBomba = document.getElementById("audioBomba");
-const audioLevelUp = document.getElementById("audioLevelUp")
+const audioLevelUp = document.getElementById("audioLevelUp");
 
 function tocarAudioDiamante() {
 
@@ -277,7 +284,7 @@ function tocarAudioBomba() {
 
     audioBomba.pause();
     audioBomba.currentTime=0;
-    audioBomba.volume=0.6
+    audioBomba.volume=0.6;
     audioBomba.play();
     
 
@@ -288,8 +295,17 @@ function TocarAudioLevelUp() {
     audioLevelUp.pause();
     audioLevelUp.currentTime=0;
     audioLevelUp.volume=0.1;
-    audioLevelUp.playbackRate=1.25
+    audioLevelUp.playbackRate=1.25;
     audioLevelUp.play();
     
 
+}
+
+
+const imagemSecreta = document.getElementById("imagemSigaEmFrente")
+
+function mostrarSegredo() {
+    telaFinal.style.display="flex"
+    imagemSecreta.style.display="flex"
+    textoFinal.style.display="none"
 }

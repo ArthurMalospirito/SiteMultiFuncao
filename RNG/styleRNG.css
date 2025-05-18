@@ -293,3 +293,22 @@ main {
     font-style: italic;
     font-size: 5rem;
 }
+
+.info button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+.info img {
+    width: 50px;
+    height: 50px;
+    margin: 0.5rem;
+
+}
+
+#imagemSigaEmFrente {
+    border-radius: 1rem;
+    display: none;
+    height: 16rem;
+    width: 36rem;
+}
