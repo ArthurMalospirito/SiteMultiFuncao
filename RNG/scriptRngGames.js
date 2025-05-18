@@ -166,6 +166,7 @@ function comecarJogo() {
 
             verba-=roundToDecimal(lucro,2)
             verbaText.innerHTML=roundToDecimal(verba,2)
+            tocarAudioDiamante()
             comecouJogo=true;
         }
         else {
@@ -186,6 +187,7 @@ function comecarJogo() {
         //CONDIÇÃO VITÓRIA
         comecouJogo=false;
         
+        TocarAudioLevelUp()
         resetarMinas()
         botaoInteracao.innerHTML="Começar Jogo";
 
@@ -194,11 +196,13 @@ function comecarJogo() {
         textoFinal.innerHTML="Você lucrou R$ "+roundToDecimal(lucro,2)+"!";
         verba+=roundToDecimal(lucro,2)
         verbaText.innerHTML=roundToDecimal(verba,2)
+
     }
 }
 
 function jogarNovamente() {
 
+    resetarMinas()
     telaFinal.style.display="none";
 
 }
@@ -214,30 +218,34 @@ let proxMultiplicador = 1;
 function clicouMina(botaoClicado) {
     qtdMinas=selectQtdMinas.value;
     if (comecouJogo===true) {
-        minasClicadas.push(botaoClicado.value);
+        if (!minasClicadas.includes(botaoClicado.value)) {
+            minasClicadas.push(botaoClicado.value);
 
-        if (botoesEscolhidosValue.includes(botaoClicado.value)) {
-            let bombaId = "mina"+botaoClicado.value+"imgBomba";
-            document.getElementById(bombaId).style.display="flex";
-            botaoClicado.style.backgroundColor="red";
-            perder()
-            //COLOCAR "PERDEU TANTO!!!"
-        }
-        else {
-            let diamanteId = "mina"+botaoClicado.value+"imgDiamante";
-            document.getElementById(diamanteId).style.display="flex";
-            botaoClicado.style.backgroundColor="lightblue";
+            if (botoesEscolhidosValue.includes(botaoClicado.value)) {
+                let bombaId = "mina"+botaoClicado.value+"imgBomba";
+                document.getElementById(bombaId).style.display="flex";
+                botaoClicado.style.backgroundColor="red";
+                tocarAudioBomba()
+                perder()
+                //COLOCAR "PERDEU TANTO!!!"
+            }
+            else {
+                let diamanteId = "mina"+botaoClicado.value+"imgDiamante";
+                document.getElementById(diamanteId).style.display="flex";
+                botaoClicado.style.backgroundColor="lightblue";
 
-            multiplicador = proxMultiplicador;
-            multiplicadorText.value = roundToDecimal(proxMultiplicador,2);
+                multiplicador = proxMultiplicador;
+                multiplicadorText.value = roundToDecimal(proxMultiplicador,2);
 
-            gemasReveladas+=1;
-            proxMultiplicador = 0.99/((25-qtdMinas-gemasReveladas)/25);
-            proxMultiplicadorText.value=roundToDecimal(proxMultiplicador,2);
+                gemasReveladas+=1;
+                proxMultiplicador = 0.99/((25-qtdMinas-gemasReveladas)/25);
+                proxMultiplicadorText.value=roundToDecimal(proxMultiplicador,2);
 
-            lucro = valorApostadoInput.value*roundToDecimal(multiplicador,2);
+                lucro = valorApostadoInput.value*roundToDecimal(multiplicador,2);
 
-            botaoInteracao.innerHTML="Retirar R$ "+roundToDecimal(lucro,2);
+                botaoInteracao.innerHTML="Retirar R$ "+roundToDecimal(lucro,2);
+                tocarAudioDiamante()
+            }
         }
 
         
@@ -248,8 +256,40 @@ function perder() {
     comecouJogo=false;
     telaFinal.style.display="flex"
     textoFinal.innerHTML="Você Perdeu!";
-    
-    resetarMinas()
     botaoInteracao.innerHTML="Começar Jogo";
     
+}
+
+
+const audioDiamante = document.getElementById("audioDiamante");
+const audioBomba = document.getElementById("audioBomba");
+const audioLevelUp = document.getElementById("audioLevelUp")
+
+function tocarAudioDiamante() {
+
+    audioDiamante.pause();
+    audioDiamante.currentTime=0;
+    audioDiamante.play();
+
+}
+
+function tocarAudioBomba() {
+
+    audioBomba.pause();
+    audioBomba.currentTime=0;
+    audioBomba.volume=0.6
+    audioBomba.play();
+    
+
+}
+
+function TocarAudioLevelUp() {
+
+    audioLevelUp.pause();
+    audioLevelUp.currentTime=0;
+    audioLevelUp.volume=0.1;
+    audioLevelUp.playbackRate=1.25
+    audioLevelUp.play();
+    
+
 }
