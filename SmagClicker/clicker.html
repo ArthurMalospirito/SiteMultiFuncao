@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="clicker.css">
+
+    <title>SmagClicker</title>
+
+</head>
+<body>
+    
+    <main>
+
+        <section class="areaClicker">
+
+            <div class="topClicker">
+
+                <div class="smagCoinsDisplay">
+                    <img src="imagens/SmagCoin.png" alt="SmagCoin">
+                <h1>0</h1>
+                </div>
+
+                <div class="SPSDisplay">
+                    <h2>SPS:</h2>
+                <h3>0</h3>
+                </div>
+
+            </div>
+
+            <div class="botao"> 
+                <button id="botaoClicker" onmousedown="clicar()" onmouseup="soltouClick()">
+                    <img src="imagens/CasaDosSmags.png" alt="BotãoSmag" id="imgBotaoClicker">
+                </button>
+            
+            </div>
+
+
+        </section>  
+
+        <section class="areaUpgrades">
+
+            <div class="abas">
+
+                <div>
+                    <button id="botaoShop" class="botaoAba" value="shop" onclick="selectMenu(this)"> Shop</button>
+
+                    <button id="botaoUpgrades" class="botaoAba" value="upgrades" onclick="selectMenu(this)">Upgrades</button>
+                </div>
+
+                <div>
+                    <button id="botaoConfig" onclick="selectMenu(this)" value="config"><img src="imagens/config.png" alt="Configurações" id="imgBotaoConfig" ></button>
+                </div>
+
+            </div>
+
+            <div class="telaShop" id="telaShopId">
+
+                <div class="blocoShop">
+                    <div class="itemShop">
+                    <div class="infoShopItem"> <!--Parte da descrição do item-->
+                        <div class="tituloShopItem"> <!--Divisão do título e cardinalidade-->
+                            <div> <!--Ajustar SPS-->
+                                <h1>Dedo Mindingo</h1> <!--Título do Item-->
+                                <p class="SPSShopItem">10 SPS</p>
+                            </div>
+
+                            <h3>#0</h3> <!--Quantidade do item-->
+                        </div>
+
+                        <p>É o dedo mindingo de um mendigo que clica e gera SmagCoins baseado em seus cliques.</p> <!--Descrição do item-->
+
+                        <button class="botaoComprarShopItem">S$ 10</button> <!--Botão com preço de compra-->
+                    </div>
+                    <img src="imagens/dedoMindingo.png" alt="DedoMindingo" class="imgShopItem"> <!--Imagem do item-->
+                    </div>
+                </div>
+
+                
+                <div class="blocoShop">
+                    <div class="bloqueadoShop" id="bloqueadoBoto">
+
+                        <img src="imagens/bloqueado.png" alt="Bloqueado">
+                        <h2>Você não desbloqueou essa estrutura</h2>
+                    </div>
+                    <div class="itemShop">
+                        <div class="infoShopItem"> <!--Parte da descrição do item-->
+                            <div class="tituloShopItem"> <!--Divisão do título e cardinalidade-->
+                                <div> <!--Ajustar SPS-->
+                                    <h1>Boto</h1> <!--Título do Item-->
+                                    <p class="SPSShopItem">10 SPS</p>
+                                </div>
+
+                                <h3>#0</h3> <!--Quantidade do item-->
+                            </div>
+                            
+
+                            <p>O botinho do balatro consegue comprar diversas SmagCoins baseado em sua fazenda Smag, também gera diversas partículas Smag.</p> <!--Descrição do item-->
+
+                            <button class="botaoComprarShopItem">S$ 500</button> <!--Botão com preço de compra-->
+                        </div>
+                        <img src="imagens/boto de asa.png" alt="DedoMindingo" class="imgShopItem"> <!--Imagem do item-->
+                    </div>    
+                </div>
+
+                <div class="blocoShop">
+                    <div class="bloqueadoShop" id="bloqueadoBebidasSmag">
+
+                        <img src="imagens/bloqueado.png" alt="Bloqueado">
+                        <h2>Você não desbloqueou essa estrutura</h2>
+                    </div>
+
+                    <div class="itemShop" id="itemBebidasSmag">
+                    <div class="infoShopItem" > <!--Parte da descrição do item-->
+                        <div class="tituloShopItem"> <!--Divisão do título e cardinalidade-->
+                            <div> <!--Ajustar SPS-->
+                                <h1>Bebidas Smag</h1> <!--Título do Item-->
+                                <p class="SPSShopItem">50 SPS</p>
+                            </div>
+
+                            <h3>#0</h3> <!--Quantidade do item-->
+                        </div>
+
+                        <p>Ao investir em bebidas Smags você pode conseguir capital pelo lucro de tais criações e percentual de venda dos produtos.</p> <!--Descrição do item-->
+
+                        <button class="botaoComprarShopItem">S$ 1000</button> <!--Botão com preço de compra-->
+                    </div>
+                    <img src="imagens/BebidasSmag.png" alt="DedoMindingo" class="imgShopItem"> <!--Imagem do item-->
+                    </div>
+                
+                </div>
+
+                <div class="blocoShop">
+                    <div class="bloqueadoShop" id="">
+
+                        <img src="imagens/bloqueado.png" alt="Bloqueado">
+                        <h2>Você não desbloqueou essa estrutura</h2>
+                    </div>
+
+
+                </div>
+
+                <div class="blocoShop">
+
+                </div>
+
+                <div class="blocoShop">
+
+                </div>
+
+                <div class="blocoShop">
+
+                </div>
+                <div class="blocoShop">
+
+                </div>
+                
+
+
+            </div>
+
+            <div class="telaUpgrade" id="telaUpgradesId">
+
+                <div class="blocoUpgrade">
+
+
+                    <div class="itemUpgrade">
+
+                        <img src="imagens/dedoMindingoDourado.png" alt="" class="imgUpgrade">
+
+                        <div class="infoUpgradeItem">
+
+                            <h1>Dedo de Ouro</h1>
+
+                            <p>O dedo Mindingo gera BEM mais</p>
+
+                            <button><img src="imagens/SmagCoin.png" alt="SmagCoin" class="moedaBotaoUpgrade">250</button>
+
+                        </div>
+
+                        <div class="upgradeRepresentar">
+
+                            <img src="imagens/dedoMindingo.png" alt="DedoMindingo">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="blocoUpgrade">
+
+                    <div class="itemUpgrade">
+
+                        <img src="imagens/boto de asa Queimado.png" alt="Boto de asa Queimado" class="imgUpgrade">
+
+                        <div class="infoUpgradeItem">
+
+                            <h1>Boto Flamejante</h1>
+
+                            <p>O boto em chames une a energia do churrasco com sua energia própria para criar mais SmagCoins</p>
+
+                            <button><img src="imagens/SmagCoin.png" alt="SmagCoin" class="moedaBotaoUpgrade">5K</button>
+
+                        </div>
+
+                        <div class="upgradeRepresentar">
+
+                            <img src="imagens/boto de asa.png" alt="DedoMindingo">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="blocoUpgrade">
+
+
+                    
+                </div>
+
+                <div class="blocoUpgrade">
+
+
+                    
+                </div>
+
+                <div class="blocoUpgrade">
+
+
+                    
+                </div>
+
+
+            </div>
+
+            <div class="telaConfig" id="telaConfigId">
+
+                <h1>Tela Config</h1>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <script src="clicker.js"></script>
+
+</body>
+</html>

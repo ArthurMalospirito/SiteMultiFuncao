@@ -1,0 +1,313 @@
+* {
+    color: aliceblue;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*  TEMPORÁRIO */
+* button {
+    background-color: rgba(107, 110, 115, 1);
+}
+
+body {
+    background-color: rgba(27, 30, 35, 1);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.areaClicker {
+    border: 1px solid;
+    border-radius: 1rem;
+    width: 50%;
+    height: 50rem; /* #ID=1*/
+
+    margin: 2.5rem;
+    margin-right: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: rgba(47, 50, 55, 1);
+
+}
+
+.topClicker {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+}
+
+.smagCoinsDisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    margin-top: 5rem;
+    gap: 1rem;
+    background-color: rgba(77, 80, 85, 1);
+    border-radius: 1rem;
+    padding: 0.2rem 1.5rem;
+    width: 80%;
+    border: 1px solid;
+}
+
+.smagCoinsDisplay img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.SPSDisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-top: 0.5rem;
+    gap: 1rem;
+    background-color: rgba(77, 80, 85, 1);
+    border-radius: 1rem;
+    padding: 0.2rem 1.5rem;
+    width: 50%;
+    justify-content: space-between;
+    border: 1px solid;
+}
+
+#botaoClicker {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    justify-self: center;
+    align-self: center;
+    margin-top: 8rem;
+
+}
+
+.areaUpgrades {
+    border: 1px solid;
+    border-radius: 1rem;
+    width: 40%;
+    height: 50rem; /* #ID=1*/
+
+    background-color: rgba(127, 130, 135, 1);
+
+    margin: 2.5rem;
+    margin-left: 1rem;
+
+}
+
+.abas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem;
+    margin-bottom: 0;
+    gap: 1rem;
+    background-color: rgba(77, 80, 85, 1);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    padding-bottom: 0rem;
+}
+
+.botaoAba {
+    height: 3rem;
+    width: 7.5rem;
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid;
+    cursor: pointer;
+    margin-left: 0.2rem;
+
+}
+
+#botaoConfig {
+    border-radius: 1rem;
+    border: 1px solid;
+    justify-self: end;
+    cursor: pointer;
+}
+
+#imgBotaoConfig {
+    width: 3rem;
+}
+
+.telaShop {
+    /* border: 1px solid blue; */
+    height: 44.5rem; /*44.5rem */
+    margin: 0.5rem;
+    margin-top: 0.1rem;
+    border-radius: 1rem;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+
+    overflow-y: auto;
+}
+
+.blocoShop {
+    border: 1px solid;
+    width: 96%;
+    height: 13rem;
+    margin: 2%;
+    border-radius: 1rem;
+}
+
+.itemShop {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.infoShopItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    justify-content: space-between;
+
+    height: 95%;
+}
+
+.tituloShopItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.SPSShopItem {
+    font-size: 0.8rem;
+    align-self: flex-start;
+    
+}
+
+.imgShopItem {
+    margin: 0 1rem;
+    width: 7.5rem;
+}
+
+.botaoComprarShopItem {
+    width: 35%;
+    height: 15%;
+    border-radius: 1rem;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+#itemBebidasSmag{
+    display: flex;
+}
+
+.bloqueadoShop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.bloqueadoShop img {
+    width: 7.5rem;
+    margin: 1rem;
+}
+
+/* REVER */ 
+
+#bloqueadoBoto {
+    display: none;
+}
+
+.telaUpgrade {
+    /* border: 1px solid blue; */
+    height: 44.5rem; /*44.5rem */
+    margin: 0.5rem;
+    margin-top: 0.1rem;
+    border-radius: 1rem;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+
+    overflow-y: auto;
+}
+
+.blocoUpgrade {
+    border: 1px solid;
+    width: 96%;
+    height: 13rem;
+    margin: 2%;
+    border-radius: 1rem;
+
+}
+
+.itemUpgrade {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoUpgradeItem {
+     height: 95%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     margin: 1rem;
+     padding: 1rem;
+}
+
+.infoUpgradeItem button{
+    width: 10rem;
+    border-radius: 1rem;
+    border: 1px solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.moedaBotaoUpgrade {
+    width: 2rem;
+}
+
+.imgUpgrade {
+    width: 6rem;
+    margin: 1rem;
+}
+
+.upgradeRepresentar {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100%;
+    padding-top:1rem;
+}
+
+.upgradeRepresentar img{
+
+    width: 2.5rem;
+}
+
+
+.telaUpgrade, .telaConfig {
+    display: none;
+}

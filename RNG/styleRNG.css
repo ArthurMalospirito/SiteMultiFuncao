@@ -256,7 +256,7 @@ main {
     color: rgba(10, 255, 100, 1);
 }
 
-.crashGame {
+.dicesGame {
     background-color: rgba(37, 40, 45, 1);
     border: 1px solid rgba(97, 100, 105, 1);
     width: 75%;
@@ -288,7 +288,7 @@ main {
 
 
 /* TIRA ISSO DEPOISSSSSSSSSSSSSSSSSSSSSSS*/
-.doubleGame h1, .crashGame h1 {
+.doubleGame h1, .dicesGame h1 {
     font-family: "Comic Neue", cursive;
     font-style: italic;
     font-size: 5rem;

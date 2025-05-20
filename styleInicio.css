@@ -61,3 +61,12 @@ header {
 .bloco h2 {
     margin: 1.5rem;
 }
+
+
+/* TEMP */
+
+#headerInfo  img {
+ height: 50px;
+ width: 50px;
+ margin: 0.5rem;
+}

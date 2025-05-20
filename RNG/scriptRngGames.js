@@ -17,7 +17,7 @@ let jogoSelecionado = "mines";
 const tituloJogo = document.getElementById("tituloJogo");
 
 const sectionMines = document.getElementById("minesGameId");
-const sectionCrash = document.getElementById("crashGameId");
+const sectionDices = document.getElementById("dicesGameId");
 const sectionDouble = document.getElementById("doubleGameId");
 
 function selecionarJogo(botaoClicado) {
@@ -25,7 +25,7 @@ function selecionarJogo(botaoClicado) {
     const corBotaoPadrao = "rgba(255, 32, 64, 1)"; //rgba(197, 200, 205, 1) //rgba(255, 32, 64, 1)"
     const corBotaoSelecionado = "rgba(255, 80, 110, 1)"; //rgba(97, 100, 105, 1) //rgba(147, 150, 155, 1);
     let botaoMines = document.getElementById("selectMines");
-    let botaoCrash = document.getElementById("selectCrash");
+    let botaoDices = document.getElementById("selectDices");
     let botaoDouble = document.getElementById("selectDouble");
 
     jogoSelecionado=botaoClicado.value
@@ -33,35 +33,35 @@ function selecionarJogo(botaoClicado) {
     switch (jogoSelecionado) {
         case "mines":
             botaoMines.style.backgroundColor=corBotaoSelecionado;
-            botaoCrash.style.backgroundColor=corBotaoPadrao;
+            botaoDices.style.backgroundColor=corBotaoPadrao;
             botaoDouble.style.backgroundColor=corBotaoPadrao;
 
             tituloJogo.innerHTML="Mines";
 
             sectionMines.style.display="flex";
-            sectionCrash.style.display="none";
+            sectionDices.style.display="none";
             sectionDouble.style.display="none";
         break;
-        case "crash":
+        case "dices":
             botaoMines.style.backgroundColor=corBotaoPadrao;
-            botaoCrash.style.backgroundColor=corBotaoSelecionado;
+            botaoDices.style.backgroundColor=corBotaoSelecionado;
             botaoDouble.style.backgroundColor=corBotaoPadrao;
 
-            tituloJogo.innerHTML="Crash";
+            tituloJogo.innerHTML="Dices";
 
             sectionMines.style.display="none";
-            sectionCrash.style.display="flex";
+            sectionDices.style.display="flex";
             sectionDouble.style.display="none";
         break;
         case "double":
             botaoMines.style.backgroundColor=corBotaoPadrao;
-            botaoCrash.style.backgroundColor=corBotaoPadrao;
+            botaoDices.style.backgroundColor=corBotaoPadrao;
             botaoDouble.style.backgroundColor=corBotaoSelecionado;
 
             tituloJogo.innerHTML="Double";
 
             sectionMines.style.display="none";
-            sectionCrash.style.display="none";
+            sectionDices.style.display="none";
             sectionDouble.style.display="flex";
         break;
         default:
