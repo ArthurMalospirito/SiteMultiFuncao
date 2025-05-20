@@ -19,12 +19,12 @@
 
                 <div class="smagCoinsDisplay">
                     <img src="imagens/SmagCoin.png" alt="SmagCoin">
-                <h1>0</h1>
+                <h1 id="smagCoins">0</h1>
                 </div>
 
                 <div class="SPSDisplay">
                     <h2>SPS:</h2>
-                <h3>0</h3>
+                <h3 id="SPS">0</h3>
                 </div>
 
             </div>
@@ -63,15 +63,15 @@
                         <div class="tituloShopItem"> <!--Divisão do título e cardinalidade-->
                             <div> <!--Ajustar SPS-->
                                 <h1>Dedo Mindingo</h1> <!--Título do Item-->
-                                <p class="SPSShopItem">10 SPS</p>
+                                <p class="SPSShopItem">1 SPS</p>
                             </div>
 
-                            <h3>#0</h3> <!--Quantidade do item-->
+                            <h3 id="qtdDedo">#0</h3> <!--Quantidade do item-->
                         </div>
 
                         <p>É o dedo mindingo de um mendigo que clica e gera SmagCoins baseado em seus cliques.</p> <!--Descrição do item-->
 
-                        <button class="botaoComprarShopItem">S$ 10</button> <!--Botão com preço de compra-->
+                        <button class="botaoComprarShopItem" value="Dedo" id="comprarDedo" onclick="comprarItem(this)">S$ 10</button> <!--Botão com preço de compra-->
                     </div>
                     <img src="imagens/dedoMindingo.png" alt="DedoMindingo" class="imgShopItem"> <!--Imagem do item-->
                     </div>
@@ -92,13 +92,13 @@
                                     <p class="SPSShopItem">10 SPS</p>
                                 </div>
 
-                                <h3>#0</h3> <!--Quantidade do item-->
+                                <h3 id="qtdBoto">#0</h3> <!--Quantidade do item-->
                             </div>
                             
 
                             <p>O botinho do balatro consegue comprar diversas SmagCoins baseado em sua fazenda Smag, também gera diversas partículas Smag.</p> <!--Descrição do item-->
 
-                            <button class="botaoComprarShopItem">S$ 500</button> <!--Botão com preço de compra-->
+                            <button class="botaoComprarShopItem" value="Boto" id="comprarBoto" onclick="comprarItem(this)">S$ 250</button> <!--Botão com preço de compra-->
                         </div>
                         <img src="imagens/boto de asa.png" alt="DedoMindingo" class="imgShopItem"> <!--Imagem do item-->
                     </div>    
@@ -119,12 +119,12 @@
                                 <p class="SPSShopItem">50 SPS</p>
                             </div>
 
-                            <h3>#0</h3> <!--Quantidade do item-->
+                            <h3 id="qtdBebida">#0</h3> <!--Quantidade do item-->
                         </div>
 
                         <p>Ao investir em bebidas Smags você pode conseguir capital pelo lucro de tais criações e percentual de venda dos produtos.</p> <!--Descrição do item-->
 
-                        <button class="botaoComprarShopItem">S$ 1000</button> <!--Botão com preço de compra-->
+                        <button class="botaoComprarShopItem" value="Bebida" id="comprarBebida" onclick="comprarItem(this)">S$ 1000</button> <!--Botão com preço de compra-->
                     </div>
                     <img src="imagens/BebidasSmag.png" alt="DedoMindingo" class="imgShopItem"> <!--Imagem do item-->
                     </div>

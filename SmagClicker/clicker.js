@@ -1,8 +1,17 @@
 
+let smagCoins=0
+
+let SPS=1
+
 //#region Select Menu
 
 window.onload = function() {
     selectMenu(botaoShop);
+}
+
+function roundToDecimal(value,decimals) {
+    let fator = Math.pow(10,decimals);
+    return Math.round(value*fator) /fator;
 }
 
 const botaoShop = document.getElementById("botaoShop");
@@ -86,9 +95,13 @@ const imgBotaoClicker = document.getElementById("imgBotaoClicker");
 
 imgBotaoClicker.style.width=proporcaoImgClickerTexto
 
+const smagCoinsDisplay = document.getElementById("smagCoins")
+
 function clicar() {
 
     imgBotaoClicker.style.width=(proporcaoImgClicker*0.99)+"px"
+    smagCoins+=1
+    smagCoinsDisplay.innerHTML=smagCoins
 
 }
 
@@ -97,6 +110,67 @@ function soltouClick() {
     imgBotaoClicker.style.width=proporcaoImgClickerTexto
 
 }
+
+//#endregion
+
+//#region Comprar Itens
+
+let precosItens = {
+    "Dedo": 25,
+    "Boto": 250,
+    "Bebida": 2500
+}
+
+let qtdItens = {
+    "Dedo": 0,
+    "Boto": 0,
+    "Bebida": 0
+}
+
+const btnComprarDedo=document.getElementById("comprarDedo")
+btnComprarDedo.innerHTML="S$ "+precosItens["Dedo"]
+
+const btnComprarBoto=document.getElementById("comprarBoto")
+btnComprarBoto.innerHTML="S$ "+precosItens["Boto"]
+
+const btnComprarBebida=document.getElementById("comprarBebida")
+btnComprarBebida.innerHTML="S$ "+precosItens["Bebida"]
+
+let multiplicadorPreco=1.1
+
+function comprarItem(botaoClicado) {
+
+    let valorBotao=botaoClicado.value
+    console.log(valorBotao)
+
+    if (smagCoins>=precosItens[valorBotao]) {
+        smagCoins-=precosItens[valorBotao]
+        smagCoinsDisplay.innerHTML=smagCoins
+        precosItens[valorBotao]=roundToDecimal(precosItens[valorBotao]*1.1,0)
+        botaoClicado.innerHTML="S$ "+precosItens[valorBotao]
+
+        qtdItens[valorBotao]+=1
+
+        let qtdParaAumentar = document.getElementById("qtd"+valorBotao)
+
+        qtdParaAumentar.innerHTML="#"+qtdItens[valorBotao]
+
+    }
+
+}
+
+//#endregion
+
+//#region RODAR JOGO
+
+//REVER DEPOIS!!!!!
+
+// setTimeout(rodarJogo,1000)
+
+// function rodarJogo() {
+//     smagCoins+=SPS
+//     smagCoinsDisplay.innerHTML=smagCoins
+// }
 
 //#endregion
 
@@ -114,3 +188,4 @@ window.onload = function(){
 
 
 //#endregion
+
