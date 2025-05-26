@@ -1,17 +1,69 @@
+// 1 - TRANFORMAR ESTRUTURAS EM OBJETOS, CARA COISA UM OBJETO
 
+// 2 - Fazer um negócio para mostrar os números bonito, ao milhão = 1.803M/1.115B/1.250T
+
+
+
+//#region Variáveis Globais
+
+const smagCoinsDisplay = document.getElementById("smagCoins")
 let smagCoins=0
 
-let SPS=1
+const SPSDisplay = document.getElementById("SPS")
+let SPS=0
 
-//#region Select Menu
 
-window.onload = function() {
-    selectMenu(botaoShop);
+class Estrutura {
+
+    constructor(preco,qtd,SPS,multiplicador) {
+
+        this.preco = preco
+        this.qtd = qtd
+        this.SPS = SPS
+        this.multiplicador = multiplicador
+
+    }
+
+}
+
+const dedo = new Estrutura(25,0,1,1)
+const boto = new Estrutura(250,0,10,1)
+const bebida = new Estrutura(2500,0,50,1)
+
+let estruturas = {
+    "Dedo": dedo,
+    "Boto": boto,
+    "Bebida": bebida
+}
+
+let estruturasString = ["Dedo","Boto","Bebida"]
+
+function calcularSPS() {
+
+    let spsCalculo = 0
+
+    for (let string of estruturasString) {
+
+        spsCalculo+=estruturas[string].qtd*(estruturas[string].SPS*estruturas[string].multiplicador)
+
+    }
+
+    SPS = spsCalculo
+    SPSDisplay.innerHTML=SPS
+
 }
 
 function roundToDecimal(value,decimals) {
     let fator = Math.pow(10,decimals);
     return Math.round(value*fator) /fator;
+}
+
+//#endregion
+
+//#region Select Menu
+
+window.onload = function() {
+    selectMenu(botaoShop);
 }
 
 const botaoShop = document.getElementById("botaoShop");
@@ -95,13 +147,13 @@ const imgBotaoClicker = document.getElementById("imgBotaoClicker");
 
 imgBotaoClicker.style.width=proporcaoImgClickerTexto
 
-const smagCoinsDisplay = document.getElementById("smagCoins")
 
 function clicar() {
 
     imgBotaoClicker.style.width=(proporcaoImgClicker*0.99)+"px"
+
     smagCoins+=1
-    smagCoinsDisplay.innerHTML=smagCoins
+    smagCoinsDisplay.innerHTML=roundToDecimal(smagCoins,2)
 
 }
 
@@ -115,77 +167,94 @@ function soltouClick() {
 
 //#region Comprar Itens
 
-let precosItens = {
-    "Dedo": 25,
-    "Boto": 250,
-    "Bebida": 2500
-}
-
-let qtdItens = {
-    "Dedo": 0,
-    "Boto": 0,
-    "Bebida": 0
-}
 
 const btnComprarDedo=document.getElementById("comprarDedo")
-btnComprarDedo.innerHTML="S$ "+precosItens["Dedo"]
+btnComprarDedo.innerHTML="S$ "+dedo.preco
 
 const btnComprarBoto=document.getElementById("comprarBoto")
-btnComprarBoto.innerHTML="S$ "+precosItens["Boto"]
+btnComprarBoto.innerHTML="S$ "+boto.preco
 
 const btnComprarBebida=document.getElementById("comprarBebida")
-btnComprarBebida.innerHTML="S$ "+precosItens["Bebida"]
+btnComprarBebida.innerHTML="S$ "+bebida.preco
 
 let multiplicadorPreco=1.1
 
 function comprarItem(botaoClicado) {
 
     let valorBotao=botaoClicado.value
-    console.log(valorBotao)
 
-    if (smagCoins>=precosItens[valorBotao]) {
-        smagCoins-=precosItens[valorBotao]
-        smagCoinsDisplay.innerHTML=smagCoins
-        precosItens[valorBotao]=roundToDecimal(precosItens[valorBotao]*1.1,0)
-        botaoClicado.innerHTML="S$ "+precosItens[valorBotao]
+    if (smagCoins>=estruturas[valorBotao].preco) {
+        smagCoins-=estruturas[valorBotao].preco
+        smagCoinsDisplay.innerHTML=roundToDecimal(smagCoins,2)
+        estruturas[valorBotao].preco=roundToDecimal(estruturas[valorBotao].preco*1.1,0)
+        botaoClicado.innerHTML="S$ "+estruturas[valorBotao].preco
 
-        qtdItens[valorBotao]+=1
-
+        estruturas[valorBotao].qtd+=1
         let qtdParaAumentar = document.getElementById("qtd"+valorBotao)
+        qtdParaAumentar.innerHTML="#"+estruturas[valorBotao].qtd
 
-        qtdParaAumentar.innerHTML="#"+qtdItens[valorBotao]
-
+        calcularSPS()
+        
     }
 
 }
 
 //#endregion
 
-//#region RODAR JOGO
+//#region Comprar Upgrades
 
-//REVER DEPOIS!!!!!
-
-// setTimeout(rodarJogo,1000)
-
-// function rodarJogo() {
-//     smagCoins+=SPS
-//     smagCoinsDisplay.innerHTML=smagCoins
-// }
-
-//#endregion
-
-//#region TESTES EXCLUIR DEPOIS
-const TESTE = document.getElementById("itemBebidasSmag")
-const teste2 = document.getElementById("bloqueadoBebidasSmag")
+const upgradesList = {
+    dedoDourado: [1000,0.5,"Dedo","blocoUpgradeDedoDourado"], // 0 = preco, 1 = mult, 2 = Objeto,3=idBloco
+    botoFlamejante: [5000,1,"Boto","blocoUpgradeBotoFlamejante"]
+}
 
 
 
-window.onload = function(){
-    teste2.style.display="none"
-    TESTE.style.display="flex"
+function comprarUpgrade(botaoClicado) {
+
+    let valorBotao = botaoClicado.value
+
+    let upgradePreco = upgradesList[valorBotao][0]
+    let upgradeMultiplicador = upgradesList[valorBotao][1]
+    let upgradeEstrutura = upgradesList[valorBotao][2]
+    let upgradeIdBloco = upgradesList[valorBotao][3]
+    
+
+    if (smagCoins>=upgradePreco) {
+
+        smagCoins-=upgradePreco
+
+        estruturas[upgradeEstrutura].multiplicador+=upgradeMultiplicador
+
+        let SPSUpgrade = document.getElementById("SPS"+upgradeEstrutura)
+        SPSUpgrade.innerHTML=estruturas[upgradeEstrutura].SPS*estruturas[upgradeEstrutura].multiplicador + " SPS"
+
+        calcularSPS()
+
+        
+
+        let blocoUpgrade = document.getElementById(upgradeIdBloco)
+        blocoUpgrade.style.display="none"
+    }
+
+    
 
 }
 
 
+
 //#endregion
+
+//#region RODAR JOGO
+
+setInterval(rodarJogo,50)
+
+
+function rodarJogo() {
+    smagCoins+=roundToDecimal(SPS/20,2)
+    smagCoinsDisplay.innerHTML=roundToDecimal(smagCoins,2)
+}
+
+//#endregion
+
 

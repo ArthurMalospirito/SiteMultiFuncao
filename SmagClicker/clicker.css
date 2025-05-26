@@ -55,7 +55,7 @@ main {
     background-color: rgba(77, 80, 85, 1);
     border-radius: 1rem;
     padding: 0.2rem 1.5rem;
-    width: 80%;
+    width: calc(12rem);
     border: 1px solid;
 }
 
@@ -223,12 +223,6 @@ main {
     margin: 1rem;
 }
 
-/* REVER */ 
-
-#bloqueadoBoto {
-    display: none;
-}
-
 .telaUpgrade {
     /* border: 1px solid blue; */
     height: 44.5rem; /*44.5rem */
@@ -309,5 +303,13 @@ main {
 
 
 .telaUpgrade, .telaConfig {
+    display: none;
+}
+
+
+
+/* TESTES */
+
+#bloqueadoBoto,#bloqueadoBebidasSmag {
     display: none;
 }

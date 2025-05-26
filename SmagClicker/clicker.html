@@ -63,7 +63,7 @@
                         <div class="tituloShopItem"> <!--Divisão do título e cardinalidade-->
                             <div> <!--Ajustar SPS-->
                                 <h1>Dedo Mindingo</h1> <!--Título do Item-->
-                                <p class="SPSShopItem">1 SPS</p>
+                                <p class="SPSShopItem" id="SPSDedo">1 SPS</p>
                             </div>
 
                             <h3 id="qtdDedo">#0</h3> <!--Quantidade do item-->
@@ -89,7 +89,7 @@
                             <div class="tituloShopItem"> <!--Divisão do título e cardinalidade-->
                                 <div> <!--Ajustar SPS-->
                                     <h1>Boto</h1> <!--Título do Item-->
-                                    <p class="SPSShopItem">10 SPS</p>
+                                    <p class="SPSShopItem" id="SPSBoto">10 SPS</p>
                                 </div>
 
                                 <h3 id="qtdBoto">#0</h3> <!--Quantidade do item-->
@@ -162,7 +162,7 @@
 
             <div class="telaUpgrade" id="telaUpgradesId">
 
-                <div class="blocoUpgrade">
+                <div class="blocoUpgrade" id="blocoUpgradeDedoDourado">
 
 
                     <div class="itemUpgrade">
@@ -173,9 +173,9 @@
 
                             <h1>Dedo de Ouro</h1>
 
-                            <p>O dedo Mindingo gera BEM mais</p>
+                            <p>O dedo Mindingo gera 50% mais</p>
 
-                            <button><img src="imagens/SmagCoin.png" alt="SmagCoin" class="moedaBotaoUpgrade">250</button>
+                            <button onclick="comprarUpgrade(this)" value="dedoDourado"><img src="imagens/SmagCoin.png" alt="SmagCoin" class="moedaBotaoUpgrade">1K</button>
 
                         </div>
 
@@ -189,7 +189,7 @@
 
                 </div>
 
-                <div class="blocoUpgrade">
+                <div class="blocoUpgrade" id="blocoUpgradeBotoFlamejante">
 
                     <div class="itemUpgrade">
 
@@ -201,7 +201,7 @@
 
                             <p>O boto em chames une a energia do churrasco com sua energia própria para criar mais SmagCoins</p>
 
-                            <button><img src="imagens/SmagCoin.png" alt="SmagCoin" class="moedaBotaoUpgrade">5K</button>
+                            <button onclick="comprarUpgrade(this)" value="botoFlamejante"><img src="imagens/SmagCoin.png" alt="SmagCoin" class="moedaBotaoUpgrade">5K</button>
 
                         </div>
 
