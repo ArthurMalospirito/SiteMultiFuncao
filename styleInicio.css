@@ -33,7 +33,7 @@ header {
 
 .explicacao p {
     font-size: 1.3rem;
-}
+} 
 
 .blocos {
     display: flex;
@@ -50,6 +50,8 @@ header {
     margin: 1.5rem;
     padding: 1rem;
     border-radius: 1rem;
+
+    box-shadow: 5px 5px rgba(255,255,255,0.35);
 }
 
 .bloco img{
@@ -69,4 +71,33 @@ header {
  height: 50px;
  width: 50px;
  margin: 0.5rem;
+}
+
+@media screen and (max-width:1100px) {
+    
+    /* Seção dos blocos principais */
+    .blocos {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .bloco {
+        width: 80%;
+    }
+
+    main {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .explicacao {
+        width: 95%;
+    }
+
 }

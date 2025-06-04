@@ -171,9 +171,14 @@ main {
     width: 10rem;
     height: 3rem;
     background-color: rgba(255, 32, 64, 1);
+    transition: background-color 0.2s ease;
     color: aliceblue;
     border: 1px solid rgba(97,100,105,1);
     cursor: pointer;
+}
+
+#botaoInteracao:hover {
+    background-color: rgba(255, 42, 84, 1);
 }
 
 .telaPreta {
@@ -311,4 +316,59 @@ main {
     display: none;
     height: 16rem;
     width: 36rem;
+}
+
+
+@media screen and (max-width:1100px) {
+    
+    .minesGame {
+        flex-direction: column;
+        height: 60rem;
+    }
+
+    .minas {
+        margin: 0;
+        padding: 0;
+        grid-template-columns: repeat(5, 1rem);
+        grid-template-rows: repeat(5, 1rem);
+        margin: 0.35rem;
+    }
+
+    .minas button {
+        width: 14vw;
+        height: 14vw;
+        margin: 0;
+    }
+
+    .minas button img{
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .areaVerba {
+        margin-top: 0rem;
+    }
+
+    .optionsMines {
+        margin-top: 0rem;
+    }
+
+    .telaPreta {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .telaFinal {
+        width: 80%;
+        height: 40%;
+    }
+
+    .telaFinal h1 {
+        font-size: 2rem;
+    }
+
+    #imagemSigaEmFrente {
+        width: 100%;
+    }
+
 }
